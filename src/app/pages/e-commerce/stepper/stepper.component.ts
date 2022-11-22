@@ -11,6 +11,7 @@ export class StepperComponent implements OnInit {
   firstForm: FormGroup;
   secondForm: FormGroup;
   thirdForm: FormGroup;
+  fourthForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
   }
@@ -27,6 +28,9 @@ export class StepperComponent implements OnInit {
     this.thirdForm = this.fb.group({
       thirdCtrl: ['', Validators.required],
     });
+    this.fourthForm = this.fb.group({
+      fourthCtrl: ['', Validators.required],
+    });
   }
 
   onFirstSubmit() {
@@ -39,5 +43,8 @@ export class StepperComponent implements OnInit {
 
   onThirdSubmit() {
     this.thirdForm.markAsDirty();
+  }
+  onFourthSubmit() {
+    this.fourthForm.markAsDirty();
   }
 }
